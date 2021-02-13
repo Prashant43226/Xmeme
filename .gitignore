@@ -1,4 +1,2 @@
-/node-modules
-npm-debug.log
-.xmeme
-/.env
+node_modules
+.env
