@@ -29,25 +29,6 @@ app.use(express.urlencoded());
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-const swaggerOptions = {
-    swaggerDefinition: {
-      info: {
-        version: "1.0.0",
-        title: "Customer API",
-        description: "Customer API Information",
-        contact: {
-          name: "Amazing Developer"
-        },
-        servers: ["http://localhost:8081"]
-      }
-    },
-    // ['.routes/*.js']
-    apis: ["app.js"]
-  };
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-
 //Routes
 app.get('/',function(req,res){
     Meme_model.find({},function(err,memes){
@@ -104,28 +85,9 @@ app.post("/edit/:id",(req, res)=>{
 
 require('./routes/routes')(app);
 
-/**
- * @swagger
- * /memes:
- *  post:
- *    description: Use to request all memes
- *    responses:
- *      '200':
- *        title:xmeme
- */
 app.post('/memes',(req,res)=>{
     res.send(memes.create);
 });
-
-/**
- * @swagger
- * /memes:
- *  get:
- *    description: Use to request all memes
- *    responses:
- *      '200':
- *        title:xmeme
- */
 
 app.get('/memes',(req,res)=>{
     res.send(memes.findAll);
