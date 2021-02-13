@@ -223,6 +223,6 @@ app.post('/memes/id',(req,res)=>{
 });
 */
 //Start server
-app.listen(8081,()=>{
+app.listen(process.ev.PORT||8081,()=>{
     console.log("Server is listening on port 8081")
 });
