@@ -6,8 +6,6 @@ const bodyParser=require('body-parser');
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 require("dotenv").config();
-const server = http.createServer(process.env.PORT || 3000);
-const http = require('http');
 
 mongoose.Promise=global.Promise
 
