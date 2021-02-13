@@ -3,8 +3,6 @@ const app=express();
 const mongoose=require('mongoose');
 const dbConfig=require('./config/database.config.js');
 const bodyParser=require('body-parser');
-const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerUi = require("swagger-ui-express");
 require("dotenv").config();
 mongoose.Promise=global.Promise
 
