@@ -3,8 +3,6 @@ const app=express();
 const mongoose=require('mongoose');
 const dbConfig=require('./config/database.config.js');
 const bodyParser=require('body-parser');
-require("dotenv").config();
-mongoose.Promise=global.Promise
 
 //database connection
 mongoose.connect(dbConfig.url,{
