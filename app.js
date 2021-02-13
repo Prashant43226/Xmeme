@@ -6,7 +6,6 @@ const bodyParser=require('body-parser');
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 require("dotenv").config();
-
 mongoose.Promise=global.Promise
 
 //database connection
@@ -66,7 +65,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 //Routes
 
 
-app.get('/',(req,res)=>{
+app.get('/',function(req,res){
     Meme_model.find({},function(err,memes){
         if(err){
             console.log('Error in fetching task from db');
